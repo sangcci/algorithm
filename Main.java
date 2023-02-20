@@ -26,8 +26,10 @@ Enter 개행마다 출력하는 방법밖에 없다.
 import java.util.*;
 
 class Main {
-    public void solution(int row, int column) {
+    public String solution(char[] brackets) {
+        String answer = "";
 
+        return answer;
     }
 
     public static void main(String[] args)  {

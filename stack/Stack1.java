@@ -10,9 +10,11 @@ public class Stack1 {
 
         for(char b : brackets) {
             if(b == ')') {
-                if(stack.size() != 0) {
-                    stack.remove(stack.lastIndexOf('('));
+                if(stack.size() == 0) {
+                    answer = "NO";
+                    return answer;
                 }
+                stack.remove(stack.lastIndexOf('('));
             } else {
                 stack.add('(');
             }
