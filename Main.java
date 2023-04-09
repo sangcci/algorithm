@@ -29,8 +29,8 @@ import java.util.*;
 
  */
 class Main {
-    public String solution(char[] brackets) {
-        String answer = "";
+    public int solution() {
+        int answer = 0;
 
         return answer;
     }
@@ -39,7 +39,5 @@ class Main {
         Main m = new Main();
         Scanner in = new Scanner(System.in);
 
-        char[] array = in.next().toCharArray();
-        System.out.println(m.solution(array));
     }
 }
