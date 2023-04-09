@@ -25,6 +25,9 @@ Enter 개행마다 출력하는 방법밖에 없다.
  */
 import java.util.*;
 
+/*
+
+ */
 class Main {
     public String solution(char[] brackets) {
         String answer = "";
@@ -36,5 +39,7 @@ class Main {
         Main m = new Main();
         Scanner in = new Scanner(System.in);
 
+        char[] array = in.next().toCharArray();
+        System.out.println(m.solution(array));
     }
 }
