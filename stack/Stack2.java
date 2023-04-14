@@ -1,7 +1,5 @@
 package stack;
 
-import java.util.Scanner;
-import java.util.Stack;
 /*
 [[괄호문자제거]]
 1. stack의 괄호 여부로만 판단하기
@@ -13,6 +11,10 @@ stack.pop()의 리턴값을 고려한 알고리즘
 - ')'가 아니라면 알파벳이든 '('든 무조껀 추가
 - ')'가 오면 while(stack.pop!= '(')계속 pop => ()안에 문자까지 다 날아간 셈
 */
+
+import java.util.Scanner;
+import java.util.Stack;
+
 public class Stack2 {
     public String solution(char[] brackets) {
         String answer = "";

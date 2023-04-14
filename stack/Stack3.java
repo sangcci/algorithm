@@ -1,8 +1,5 @@
 package stack;
 
-import java.util.Scanner;
-import java.util.Stack;
-
 /*
 [[ 크레인 인형뽑기(카카오) ]]
 절차
@@ -16,6 +13,10 @@ stack에 있는 마지막 값과 비교 후 같으면 pop, answer에 2개 추가
 - 꺼낸 건 stack에 있는 마지막 값과 비교
 - 실수하지 말자
  */
+
+import java.util.Scanner;
+import java.util.Stack;
+
 public class Stack3 {
     public int solution(char[][] board, int[] moves) {
         int answer = 0;

@@ -1,8 +1,5 @@
 package stack;
 
-import java.util.Scanner;
-import java.util.Stack;
-
 /*
 [[괄호 문제]]
 
@@ -11,6 +8,9 @@ import java.util.Stack;
 - ()( : 괄호가 끝맺음을 한 후 '('가 나올 경우 => 그대로 진행
 
  */
+
+import java.util.Scanner;
+import java.util.Stack;
 
 public class Stack1 {
     public String solution(char[] brackets) {

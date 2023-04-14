@@ -26,6 +26,7 @@ Enter 개행마다 출력하는 방법밖에 없다.
 import java.util.*;
 
 /*
+쇠막대기
 
  */
 class Main {
@@ -40,5 +41,7 @@ class Main {
         Main m = new Main();
         Scanner in = new Scanner(System.in);
 
+        char c = '1';
+        System.out.println("c = " + (int)c);
     }
 }
