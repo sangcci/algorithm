@@ -10,12 +10,12 @@
 import java.util.*;
 
 /*
-[[ ]]
+[[  ]]
 
  */
 public class Main {
-    public int solution() {
-        int answer = 0;
+    public int[] solution(int[] arr) {
+        int[] answer;
 
         return answer;
     }
@@ -25,5 +25,15 @@ public class Main {
         Main m = new Main();
         Scanner in = new Scanner(System.in);
 
+        int count = in.nextInt();
+
+        int[] arr = new int[count];
+        for(int i = 0; i < arr.length; i++) {
+            arr[i] = in.nextInt();
+        }
+
+        for(int i : m.solution(arr)) {
+            System.out.print(i + " ");
+        }
     }
 }
