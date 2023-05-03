@@ -10,30 +10,29 @@
 import java.util.*;
 
 /*
-[[  ]]
-
+[[ ]]
 
  */
 public class Main {
-    public int[] solution(int[] arr) {
+    public int[] solution(int S, int[] pros) {
         int[] answer;
 
         return answer;
     }
 
-
     public static void main(String[] args) {
         Main m = new Main();
         Scanner in = new Scanner(System.in);
 
-        int count = in.nextInt();
+        int S = in.nextInt();
+        int N = in.nextInt();
 
-        int[] arr = new int[count];
+        int[] arr = new int[N];
         for(int i = 0; i < arr.length; i++) {
             arr[i] = in.nextInt();
         }
 
-        for(int i : m.solution(arr)) {
+        for(int i : m.solution(S, arr)) {
             System.out.print(i + " ");
         }
     }
