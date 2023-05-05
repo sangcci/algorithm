@@ -1,22 +1,12 @@
-
-/*
-[[ 쇠막대기 (한국정보올림피아드) ]]
-특징
-- '('가 연속으로 온다면 막대를 표현 -> 막대 갯수 세어야 함
-- '(' 다음으로 ')'가 온다면 짜르기 -> 쌓인 막대를 다 자르는 것이므로 2 나누기
-- ')' 이후로 ')'가 온다면 막대의 끝을 표현
- */
-
-import java.util.*;
-
 /*
 [[ ]]
 
  */
-public class Main {
-    public int[] solution(int S, int[] pros) {
-        int[] answer;
+import java.util.*;
 
+public class Main {
+    public String solution(int[] arr) {
+        String answer = "";
         return answer;
     }
 
@@ -24,7 +14,6 @@ public class Main {
         Main m = new Main();
         Scanner in = new Scanner(System.in);
 
-        int S = in.nextInt();
         int N = in.nextInt();
 
         int[] arr = new int[N];
@@ -32,8 +21,6 @@ public class Main {
             arr[i] = in.nextInt();
         }
 
-        for(int i : m.solution(S, arr)) {
-            System.out.print(i + " ");
-        }
+        System.out.print(m.solution(arr));
     }
 }
