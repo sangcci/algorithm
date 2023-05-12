@@ -6,18 +6,24 @@ import java.util.*;
 
 public class Main {
 
-    public int solution(int n1, int n2) {
+    public int solution(int N, int M, int[] singsMinute) {
+        int answer = 0;
 
-        return count;
+        return answer;
     }
 
     public static void main(String[] args) {
         Main m = new Main();
         Scanner in = new Scanner(System.in);
 
-        int n1 = in.nextInt();
-        int n2 = in.nextInt();
+        int N = in.nextInt();
+        int M = in.nextInt();
 
-        System.out.print(m.solution(n1, n2));
+        int[] singsMinute = new int[N];
+        for(int i = 0; i < singsMinute.length; i++) {
+            singsMinute[i] = in.nextInt();
+        }
+
+        System.out.print(m.solution(N, M, singsMinute));
     }
 }

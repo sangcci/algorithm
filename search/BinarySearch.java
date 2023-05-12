@@ -1,4 +1,4 @@
-package sort;
+package search;
 
 /*
 [[ 이분 검색 ]]
