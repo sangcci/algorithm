@@ -4,11 +4,8 @@ import java.util.*;
 
  */
 public class Main {
+    public int DFS(int N) {
 
-    public int solution(int count) {
-        int answer = 0;
-
-        return answer;
     }
 
 
@@ -18,6 +15,6 @@ public class Main {
 
         int N = in.nextInt();
 
-        System.out.print(m.solution(N));
+        System.out.println(m.DFS(N));
     }
 }
