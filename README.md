@@ -3,7 +3,8 @@ Java 언어를 사용하여 여러 알고리즘 문제들을 풀어봅니다.
 
 - Array
 - Sliding Window (Two Pointer)
-- Hash Algorithm
+- End Pointer
+- HashMap
 - Stack, Queue
 - Sorting
 - Searching
