@@ -1,16 +1,21 @@
 import java.util.*;
 /*
-[[ 로또의 최고 순위와 최저 순위 ]]
+[[  ]]
 
  */
 public class Main {
-    public void solution() {
-
+    public String solution(String X, String Y) {
+        String answer = "";
+        return answer;
     }
 
     public static void main(String[] args) {
         Main m = new Main();
         Scanner in = new Scanner(System.in);
 
+        String X = in.next();
+        String Y = in.next();
+
+        System.out.println(m.solution(X, Y));
     }
 }

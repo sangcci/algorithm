@@ -4,7 +4,7 @@ Java 언어를 사용하여 여러 알고리즘 문제들을 풀어봅니다.
 - Array
 - Sliding Window (Two Pointer)
 - End Pointer
-- Hash Algorithm
+- HashMap
 - Stack, Queue
 - Sorting
 - Searching
