@@ -4,7 +4,7 @@ import java.util.*;
 
  */
 public class Main {
-    public void BFS(int end) {
+    public int BFS(int S, int E) {
 
     }
 
