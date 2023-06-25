@@ -4,8 +4,7 @@ import java.util.*;
 
  */
 public class Main {
-
-    public void BFS() {
+    public void DFS(int v) {
 
     }
     public static void main(String[] args) {
