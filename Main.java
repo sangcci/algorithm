@@ -4,8 +4,9 @@ import java.util.*;
 
  */
 public class Main {
-    public void DFS(int l, int sum) {
-
+    public int[] solution(int n, String[] words) {
+        int[] answer = new int[2];
+        return answer;
     }
     public static void main(String[] args) {
         Main m = new Main();
