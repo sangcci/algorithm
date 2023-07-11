@@ -4,7 +4,7 @@ import java.util.*;
 
  */
 public class Main {
-    public void dfs(int l, int sum) {
+    public void dfs() {
 
     }
 
