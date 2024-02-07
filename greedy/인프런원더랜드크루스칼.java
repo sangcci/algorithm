@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.StringTokenizer;
 
-public class 인프런원더랜드 {
+public class 인프런원더랜드크루스칼 {
 
     static int[] unf;
     static int sum;
