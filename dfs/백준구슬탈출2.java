@@ -48,7 +48,8 @@ public class 백준구슬탈출2 {
         bfs:
         while (!q.isEmpty()) {
             Marble cur = q.poll();
-            if (cur.count > 10) {
+            if (cur.count + 1 > 10) {
+                //System.out.println("count 10 초과");
                 break bfs;
             }
             //System.out.println("------");
@@ -58,8 +59,6 @@ public class 백준구슬탈출2 {
             // 기울이기
             tilt:
             for (int i = 0; i < 4; i++) {
-                // 기울인 횟수 추가
-                int count = cur.count + 1;
                 //System.out.println("현재 기울이기 방향");
                 //System.out.println(i);
                 // R 구슬 움직이기
@@ -101,14 +100,13 @@ public class 백준구슬탈출2 {
                 }
 
                 // 구멍에 빠질 경우
-                if (isFallR) {
-                    if (!isFallB) {
-                        //System.out.println("구슬을 만났다!!");
-                        answer = count;
-                        break bfs;
-                    } else if (isFallB) {
-                        break tilt;
-                    }
+                if (isFallR && !isFallB) {
+                    //System.out.println("구슬을 만났다!!");
+                    answer = cur.count + 1;
+                    break bfs;
+                }
+                if (isFallR && isFallB) {
+                    continue tilt;
                 }
                 if (isFallB) {
                     continue tilt;
@@ -130,11 +128,11 @@ public class 백준구슬탈출2 {
                         }
                     } else if (i == 2) { // 아래쪽
                         if (cur.Ry > cur.By) {
-                            nextRy -= moveY[i];
-                        } else {
                             nextBy -= moveY[i];
+                        } else {
+                            nextRy -= moveY[i];
                         }
-                    } else if (i == 3) { // up
+                    } else if (i == 3) { // 왼쪽
                         if (cur.Rx > cur.Bx) {
                             nextRx -= moveX[i];
                         } else {
@@ -147,7 +145,7 @@ public class 백준구슬탈출2 {
                 if (!checkArr[nextRy][nextRx][nextBy][nextBx]) {
                     checkArr[nextRy][nextRx][nextBy][nextBx] = true;
                     //System.out.println("저장! " + "R: " + nextRy + " " + nextRx + " B: " + nextBy + " " + nextBx);
-                    Marble nextMarble = new Marble(count, nextRx, nextRy, nextBx, nextBy);
+                    Marble nextMarble = new Marble(cur.count + 1, nextRx, nextRy, nextBx, nextBy);
                     q.offer(nextMarble);
                 }
             }
