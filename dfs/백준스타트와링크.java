@@ -3,88 +3,88 @@ package dfs;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 public class 백준스타트와링크 {
 
     static int n;
+    static int[][] S;
     static int[] members;
-    static int[][] abilities;
-
-    static int min = Integer.MAX_VALUE;
+    static int min;
 
     public static void main(String[] args) throws IOException {
-        input();
-        divideTeamInDfs(0, 0, new boolean[n]);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        n = Integer.parseInt(br.readLine());
+
+        S = new int[n][n];
+        for (int y = 0; y < n; y++) {
+            StringTokenizer input = new StringTokenizer(br.readLine(), " ");
+            for (int x = 0; x < n; x++) {
+                S[y][x] = Integer.parseInt(input.nextToken());
+            }
+        }
+        members = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            members[i] = i;
+        }
+        int[] start = new int[n / 2];
+        for (int i = 0; i < 2 / n; i++) {
+            start[i] = 0;
+        }
+        min = Integer.MAX_VALUE;
+
+        dfs(0, start, 0);
+
         System.out.println(min);
     }
 
-    public static void input() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        n = Integer.parseInt(br.readLine());
-
-        members = new int[n];
-        for (int i = 0; i < n; i++) {
-            members[i] = i + 1;
-        }
-
-        abilities = new int[n][n];
-        for (int y = 0; y < n; y++) {
-            StringTokenizer abilityInput = new StringTokenizer(br.readLine(), " ");
-            for (int x = 0; x < n; x++) {
-                abilities[y][x] = Integer.parseInt(abilityInput.nextToken());
-            }
-        }
-    }
-
-    /*
-     팀 선정 (dfs 활용)
-     */
-    public static void divideTeamInDfs(int level, int count, boolean[] chooseMembers) {
-        if (count == n/2) {
-            int[] start = new int[n/2];
-            int[] link = new int[n/2];
-            for (int i = 0, startIndex = 0, linkIndex = 0; i < chooseMembers.length; i++) {
-                if (chooseMembers[i] == true) {
-                    start[startIndex++] = i + 1;
-                } else {
-                    link[linkIndex++] = i + 1;
-                }
-            }
-            int startAbilitySum = calculateTeamAbilityInDfs(0, 0, new boolean[start.length], start, 0);
-            int linkAbilitySum = calculateTeamAbilityInDfs(0, 0, new boolean[link.length], link, 0);
-            int diff = Math.abs(startAbilitySum - linkAbilitySum);
+    public static void dfs(int level, int[] start, int next) {
+        if (level >= n / 2) {
+            int[] link = createLinkTeam(start);
+            int diff = Math.abs(sum(start) - sum(link));
             min = Math.min(min, diff);
-        } else if (level >= n) return;
-        else {
-            chooseMembers[level] = true;
-            divideTeamInDfs(level + 1, count + 1, chooseMembers);
-            chooseMembers[level] = false;
-            divideTeamInDfs(level + 1, count, chooseMembers);
+        } else {
+            for (int i = next + 1; i <= n; i++) {
+                start[level] = members[i];
+                dfs(level + 1, start, i);
+                start[level] = 0;
+            }
         }
     }
 
-    /*
-     팀 능력 계산 (dfs 활용)
-     */
-    public static int calculateTeamAbilityInDfs(int level, int count, boolean[] chosenTeam, int[] team, int sum) {
-        if (count == 2) {
-            int[] chosen = new int[2];
-            for (int i = 0, chosenIndex = 0; i < chosenTeam.length; i++) {
-                if (chosenTeam[i] == true) {
-                    chosen[chosenIndex++] = team[i];
+    public static int[] createLinkTeam(int[] start) {
+        List<Integer> link = new ArrayList<>();
+        for (int i = 1; i <= n; i++) {
+            boolean flag = false;
+            for (int j = 0; j < start.length; j++) {
+                if (members[i] == start[j]) {
+                    flag = true;
                 }
             }
-            int a = chosen[0] - 1;
-            int b = chosen[1] - 1;
-            sum += abilities[a][b] + abilities[b][a];
-        } else if (level >= n/2) return sum;
-        else {
-            chosenTeam[level] = true;
-            sum = calculateTeamAbilityInDfs(level + 1, count + 1, chosenTeam, team, sum);
-            chosenTeam[level] = false;
-            sum = calculateTeamAbilityInDfs(level + 1, count, chosenTeam, team, sum);
+            if (!flag) {
+                link.add(members[i]);
+            }
+        }
+        return link.stream().mapToInt(each -> each).toArray();
+    }
+
+    public static int sum(int[] team) {
+        int sum = 0;
+        for (int i = 0; i < team.length; i++) {
+            for (int j = 0; j < team.length; j++) {
+                sum += S[team[i] - 1][team[j] - 1];
+            }
         }
         return sum;
+    }
+
+    public static void testPrint(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
     }
 }
