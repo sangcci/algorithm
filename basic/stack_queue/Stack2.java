@@ -1,4 +1,4 @@
-package basic.stack;
+package basic.stack_queue;
 
 /*
 [[괄호문자제거]]

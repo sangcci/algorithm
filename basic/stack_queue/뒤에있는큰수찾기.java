@@ -1,4 +1,4 @@
-package basic.stack;
+package basic.stack_queue;
 /**
  [[ 프로그래머스 2단계 뒤에 있는 큰 수 찾기 ]]
  유형: 탐색 문제 (Stack 이용)

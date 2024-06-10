@@ -1,4 +1,4 @@
-package basic.stack;
+package basic.stack_queue;
 
 /*
 [[ 크레인 인형뽑기(카카오) ]]
